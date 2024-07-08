@@ -11,7 +11,7 @@ const errorResponse = new NextResponse(
     <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_BASE_URL}/heart_empty.png}.png"/>
     <meta property="fc:frame:image:aspect_ratio" content="1:1"/>
     <meta property="fc:frame:button:1" content="START OVER"/>
-    <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}"/>
+    <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/"/>
     </head>
     </html>`
 );
