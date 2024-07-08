@@ -1,12 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const images = [
-  "orc_red",
-  "sword_silver",
-  "shield_silver",
-  "book_blue",
-  "orb_blue",
-];
+const images = ["sword_silver", "shield_silver", "book_blue", "orb_blue"];
 
 const getResponse = async (req: NextRequest): Promise<NextResponse> => {
   const searchParams = req.nextUrl.searchParams;
