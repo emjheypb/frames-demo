@@ -18,7 +18,7 @@ const getResponse = async (req: NextRequest): Promise<NextResponse> => {
     return new NextResponse(
       `<!DOCTYPE html><html>
         <head>
-        <title>Frame 7</title>
+        <title>Last Frame</title>
         <meta property="fc:frame" content="vNext"/>
         <meta property="fc:frame:image" content="${
           process.env.NEXT_PUBLIC_BASE_URL
