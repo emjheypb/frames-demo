@@ -1,9 +1,22 @@
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export async function POST(req: NextRequest) {
+const errorResponse = new NextResponse(
+  `<!DOCTYPE html><html>
+    <head>
+    <title>Last Frame</title>
+    <meta property="fc:frame" content="vNext"/>
+    <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_BASE_URL}/heart_empty.png}.png"/>
+    <meta property="fc:frame:image:aspect_ratio" content="1:1"/>
+    <meta property="fc:frame:button:1" content="START OVER"/>
+    <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}"/>
+    </head>
+    </html>`
+);
+
+export async function POST(req: NextRequest): Promise<NextResponse> {
   try {
     const request = await req.json();
     const email = request.untrustedData.inputText;
@@ -18,11 +31,22 @@ export async function POST(req: NextRequest) {
     });
 
     if (error) {
-      return Response.json({ error }, { status: 500 });
+      return errorResponse;
     }
 
-    return Response.json(data);
+    return new NextResponse(
+      `<!DOCTYPE html><html>
+        <head>
+        <title>Last Frame</title>
+        <meta property="fc:frame" content="vNext"/>
+        <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_BASE_URL}/heart.png}.png"/>
+        <meta property="fc:frame:image:aspect_ratio" content="1:1"/>
+        <meta property="fc:frame:button:1" content="START OVER"/>
+        <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}"/>
+        </head>
+        </html>`
+    );
   } catch (error) {
-    return Response.json({ error }, { status: 500 });
+    return errorResponse;
   }
 }
