@@ -2,13 +2,16 @@ import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+const searchParams = new URLSearchParams({
+  title: "Valid Email Required",
+});
 
 const errorResponse = new NextResponse(
   `<!DOCTYPE html><html>
     <head>
-    <title>Last Frame</title>
+    <title>Error Registering</title>
     <meta property="fc:frame" content="vNext"/>
-    <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_BASE_URL}/heart_empty.png"/>
+    <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_BASE_URL}/og?${searchParams}"/>
     <meta property="fc:frame:image:aspect_ratio" content="1:1"/>
     <meta property="fc:frame:input:text" content="EMAIL"/>
     <meta property="fc:frame:button:1" content="TRY AGAIN"/>
@@ -22,8 +25,6 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     const request = await req.json();
     const email = request.untrustedData.inputText;
 
-    console.log(email);
-    // console.log(JSON.parse(request));
     if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
       return errorResponse;
     }
@@ -41,7 +42,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     return new NextResponse(
       `<!DOCTYPE html><html>
         <head>
-        <title>Last Frame</title>
+        <title>Register Successful</title>
         <meta property="fc:frame" content="vNext"/>
         <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_BASE_URL}/heart.png"/>
         <meta property="fc:frame:image:aspect_ratio" content="1:1"/>

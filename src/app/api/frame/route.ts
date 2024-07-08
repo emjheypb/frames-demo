@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 const images = ["sword_silver", "shield_silver", "book_blue", "orb_blue"];
 
-const getResponse = async (req: NextRequest): Promise<NextResponse> => {
+const getResponse = async (req: NextRequest) => {
   const searchParams = req.nextUrl.searchParams;
   const id: any = searchParams.get("id");
   const idAsNumber = parseInt(id);
