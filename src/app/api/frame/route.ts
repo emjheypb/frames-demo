@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const images = ["sword_silver", "shield_silver", "book_blue", "orb_blue"];
+const images = ["heart_empty"];
 
 const getResponse = async (req: NextRequest) => {
   const searchParams = req.nextUrl.searchParams;
