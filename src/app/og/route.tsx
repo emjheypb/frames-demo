@@ -30,35 +30,27 @@ export async function GET(request: Request) {
             alignItems: "center",
             justifyContent: "center",
             flexDirection: "column",
-            backgroundImage: "linear-gradient(to bottom, #dbf4ff, #fff1f1)",
-            fontSize: 80,
-            fontWeight: 700,
             textAlign: "center",
-          }}>
+          }}
+          className="bg-[url('/heart_empty.png')]">
           <p
             style={{
-              backgroundImage:
-                "linear-gradient(90deg, rgb(0, 124, 240), rgb(0, 223, 216))",
               backgroundClip: "text",
               color: "transparent",
-              fontSize: 80,
-              fontWeight: 700,
               margin: 0,
-            }}>
+            }}
+            className="bg-[url('/heart_empty.png')]">
             {title}
           </p>
           {description && (
             <p
               style={{
-                backgroundImage:
-                  "linear-gradient(90deg, rgb(121, 40, 202), rgb(255, 0, 128))",
                 backgroundClip: "text",
                 color: "transparent",
-                fontSize: 80,
-                fontWeight: 700,
                 margin: 0,
                 marginTop: 20,
-              }}>
+              }}
+              className="bg-[url('/heart_empty.png')]">
               {description}
             </p>
           )}
