@@ -9,12 +9,16 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     const email = request.untrustedData.inputText;
 
     if (!email || !/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
+      const searchParams = new URLSearchParams({
+        title: "Invalid Email",
+      });
+
       return new NextResponse(
         `<!DOCTYPE html><html>
           <head>
           <title>Error Registering</title>
           <meta property="fc:frame" content="vNext"/>
-          <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_BASE_URL}/og"/>
+          <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_BASE_URL}/og?${searchParams}"/>
           <meta property="fc:frame:image:aspect_ratio" content="1:1"/>
           <meta property="fc:frame:input:text" content="EMAIL"/>
           <meta property="fc:frame:button:1" content="TRY AGAIN"/>
@@ -31,12 +35,16 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     });
 
     if (error) {
+      const searchParams = new URLSearchParams({
+        title: "An error occurred. Try again.",
+      });
+
       return new NextResponse(
         `<!DOCTYPE html><html>
           <head>
           <title>Error Registering</title>
           <meta property="fc:frame" content="vNext"/>
-          <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_BASE_URL}/og"/>
+          <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_BASE_URL}/og?${searchParams}"/>
           <meta property="fc:frame:image:aspect_ratio" content="1:1"/>
           <meta property="fc:frame:input:text" content="EMAIL"/>
           <meta property="fc:frame:button:1" content="TRY AGAIN"/>
@@ -57,12 +65,16 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
         </html>`
     );
   } catch (error) {
+    const searchParams = new URLSearchParams({
+      title: "An error occurred. Try again.",
+    });
+
     return new NextResponse(
       `<!DOCTYPE html><html>
         <head>
         <title>Error Registering</title>
         <meta property="fc:frame" content="vNext"/>
-        <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_BASE_URL}/og"/>
+        <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_BASE_URL}/og?${searchParams}"/>
         <meta property="fc:frame:image:aspect_ratio" content="1:1"/>
         <meta property="fc:frame:input:text" content="EMAIL"/>
         <meta property="fc:frame:button:1" content="TRY AGAIN"/>
