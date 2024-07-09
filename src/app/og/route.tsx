@@ -10,56 +10,14 @@ export async function GET(request: Request) {
 
     // ?title=<title>
     const hasTitle = searchParams.has("title");
-    const title = hasTitle
-      ? searchParams.get("title")?.slice(0, 100)
-      : "Default Title";
-
-    // ?description=
-    const hasDescription = searchParams.has("description");
-    const description = hasDescription
-      ? searchParams.get("description")?.slice(0, 100)
-      : "";
+    const title = hasTitle ? searchParams.get("title")?.slice(0, 100) : "Title";
 
     return new ImageResponse(
       (
-        <div
-          style={{
-            display: "flex",
-            height: "100%",
-            width: "100%",
-            alignItems: "center",
-            justifyContent: "center",
-            flexDirection: "column",
-            textAlign: "center",
-          }}
-          className="bg-[url('/heart_empty.png')]">
-          <p
-            style={{
-              backgroundClip: "text",
-              color: "transparent",
-              margin: 0,
-            }}
-            className="bg-[url('/heart_empty.png')]">
-            {title}
-          </p>
-          {description && (
-            <p
-              style={{
-                backgroundClip: "text",
-                color: "transparent",
-                margin: 0,
-                marginTop: 20,
-              }}
-              className="bg-[url('/heart_empty.png')]">
-              {description}
-            </p>
-          )}
+        <div className="h-full w-full flex items-center justify-center">
+          <p>{title}</p>
         </div>
-      ),
-      {
-        width: 1200,
-        height: 630,
-      }
+      )
     );
   } catch (e: any) {
     console.log(`${e.message}`);
