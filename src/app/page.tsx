@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import { NextResponse } from "next/server";
 
 export const metadata: Metadata = {
   title: "Frames Demo",
