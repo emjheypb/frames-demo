@@ -12,8 +12,10 @@ export const metadata: Metadata = {
     "fc:frame": "vNext",
     "fc:frame:image": `${process.env.NEXT_PUBLIC_BASE_URL}/orc_red.png`,
     "fc:frame:image:aspect_ratio": "1:1",
-    "fc:frame:button:1": `START`,
-    "fc:frame:post_url": `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=1`,
+    "fc:frame:button:2": `REGISTER`,
+    "fc:frame:button:2:post_url": `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=1`,
+    "fc:frame:button:1": `PLAY ROCK, PAPER, SCISSORS`,
+    "fc:frame:button:1:post_url": `${process.env.NEXT_PUBLIC_BASE_URL}/api/under-construction`,
   },
 };
 
