@@ -18,10 +18,14 @@ const getResponse = async (req: NextRequest) => {
         }/${images[id - 1]}.png"/>
         <meta property="fc:frame:image:aspect_ratio" content="1:1"/>
         <meta property="fc:frame:input:text" content="EMAIL"/>
-        <meta property="fc:frame:button:1" content="REGISTER"/>
-        <meta property="fc:frame:post_url" content="${
-          process.env.NEXT_PUBLIC_BASE_URL
-        }/api/register"/>
+          <meta property="fc:frame:button:1" content="BACK"/>
+          <meta property="fc:frame:button:1:post_url" content="${
+            process.env.NEXT_PUBLIC_BASE_URL
+          }/api/start"/>
+          <meta property="fc:frame:button:2" content="REGISTER"/>
+          <meta property="fc:frame:button:2:post_url" content="${
+            process.env.NEXT_PUBLIC_BASE_URL
+          }/api/register"/>
         </head>
         </html>`
     );

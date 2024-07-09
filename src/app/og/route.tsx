@@ -31,8 +31,8 @@ export async function GET(request: Request) {
             justifyContent: "center",
             flexDirection: "column",
             textAlign: "center",
-          }}
-          className="bg-[url('/heart_empty.png')]">
+            backgroundImage: "linear-gradient(to bottom, #dbf4ff, #fff1f1)",
+          }}>
           <p
             style={{
               backgroundClip: "text",

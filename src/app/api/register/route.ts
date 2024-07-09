@@ -21,8 +21,10 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
           <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_BASE_URL}/og?${searchParams}"/>
           <meta property="fc:frame:image:aspect_ratio" content="1:1"/>
           <meta property="fc:frame:input:text" content="EMAIL"/>
-          <meta property="fc:frame:button:1" content="TRY AGAIN"/>
-          <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/register"/>
+          <meta property="fc:frame:button:1" content="BACK"/>
+          <meta property="fc:frame:button:1:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/start"/>
+          <meta property="fc:frame:button:2" content="REGISTER"/>
+          <meta property="fc:frame:button:2:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/register"/>
           </head>
           </html>`
       );
@@ -47,8 +49,10 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
           <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_BASE_URL}/og?${searchParams}"/>
           <meta property="fc:frame:image:aspect_ratio" content="1:1"/>
           <meta property="fc:frame:input:text" content="EMAIL"/>
-          <meta property="fc:frame:button:1" content="TRY AGAIN"/>
-          <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/register"/>
+          <meta property="fc:frame:button:1" content="BACK"/>
+          <meta property="fc:frame:button:1:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/start"/>
+          <meta property="fc:frame:button:2" content="REGISTER"/>
+          <meta property="fc:frame:button:2:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/register"/>
           </head>
           </html>`
       );
@@ -79,8 +83,10 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
         <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_BASE_URL}/og?${searchParams}"/>
         <meta property="fc:frame:image:aspect_ratio" content="1:1"/>
         <meta property="fc:frame:input:text" content="EMAIL"/>
-        <meta property="fc:frame:button:1" content="TRY AGAIN"/>
-        <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/register"/>
+          <meta property="fc:frame:button:1" content="BACK"/>
+          <meta property="fc:frame:button:1:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/start"/>
+          <meta property="fc:frame:button:2" content="REGISTER"/>
+          <meta property="fc:frame:button:2:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/register"/>
         </head>
         </html>`
     );
